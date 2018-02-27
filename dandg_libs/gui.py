@@ -142,11 +142,6 @@ class DoorGUI(Frame):
         values = self.door.frameInfo()
         x, y = renderTable(draw, (x, y), 'Параметры калитки', values, two_columns, font_b, font)
 
-        # отрисовка параметров проема
-        x, y = x, y + FONT_BOARD_SIZE
-        values = self.door.doorwayInfo()
-        x, y = renderTable(draw, (x, y), 'Размеры проема', values, two_columns, font_b, font)
-
         # отрисовка створки
         x, y = x, y + FONT_BOARD_SIZE
         values = self.door.doorInfo()
@@ -161,6 +156,11 @@ class DoorGUI(Frame):
         x, y = x, y + FONT_BOARD_SIZE
         values = self.door.colorInfo()
         x, y = renderTable(draw, (x, y), 'Параметры покраски', values, two_columns, font_b, font)
+
+        # отрисовка параметров проема
+        x, y = x, y + FONT_BOARD_SIZE
+        values = self.door.doorwayInfo()
+        x, y = renderTable(draw, (x, y), 'Размеры проема', values, two_columns, font_b, font)
 
         ######### второй столбец ###########
         x, y = 1250, 1450
